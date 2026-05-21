@@ -93,22 +93,7 @@ export function HeroSection({ setCurrentPage }: HeroSectionProps) {
             <span className="block text-accent">Việt Nam</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            A cinematic timeline journey—interactive map fly-to transitions, quote popups, and emotional contrasts.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg neon-purple"
-                onClick={() => setCurrentPage(3)}
-              >
-                Start the Journey
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </motion.div>
-          </div>
+          
         </motion.div>
       </div>
     </section>

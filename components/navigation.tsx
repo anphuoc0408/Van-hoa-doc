@@ -1,28 +1,39 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { QrCode, Menu, X, BookOpen, Headphones, Users, Sparkles, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  QrCode,
+  Menu,
+  X,
+  BookOpen,
+  Headphones,
+  Users,
+  Sparkles,
+  MapPin,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface NavigationProps {
-  currentPage: number
-  setCurrentPage: (page: number) => void
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
 }
 
-export default function Navigation({ currentPage, setCurrentPage }: NavigationProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScanning, setIsScanning] = useState(false)
+export default function Navigation({
+  currentPage,
+  setCurrentPage,
+}: NavigationProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScanning, setIsScanning] = useState(false);
 
   const navItems = [
     { id: 0, label: "Trang Chủ", icon: BookOpen },
     { id: 1, label: "Podcast Bảo Ngọc", icon: Headphones },
     { id: 2, label: "Danh Nhân", icon: Users },
     { id: 3, label: "Story Map", icon: MapPin },
-  ]
+  ];
 
-  const TARGET_URL = `${typeof window !== "undefined" ? window.location.origin : ""}/qr`
-
+  const TARGET_URL = `${typeof window !== "undefined" ? window.location.origin : ""}/qr`;
 
   return (
     <motion.nav
@@ -33,7 +44,7 @@ export default function Navigation({ currentPage, setCurrentPage }: NavigationPr
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div 
+          <motion.div
             className="flex items-center gap-3"
             whileHover={{ scale: 1.02 }}
           >
@@ -50,7 +61,13 @@ export default function Navigation({ currentPage, setCurrentPage }: NavigationPr
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
-                onClick={() => setCurrentPage(item.id)}
+                onClick={() => {
+                  if (item.id === 3) {
+                    window.location.href = "/storymap";
+                  } else {
+                    setCurrentPage(item.id);
+                  }
+                }}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${
                   currentPage === item.id
                     ? "bg-primary/20 text-primary"
@@ -65,15 +82,14 @@ export default function Navigation({ currentPage, setCurrentPage }: NavigationPr
             ))}
           </div>
 
-      {/* QR Toggle (Website QR) */}
+          {/* QR Toggle (Website QR) */}
           <div className="flex items-center gap-3">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 onClick={() => {
-                  setIsScanning(true)
+                  setIsScanning(true);
                 }}
                 variant="outline"
-
                 className="relative border-primary/30 hover:border-primary hover:bg-primary/10 gap-2"
               >
                 <QrCode className="w-4 h-4" />
@@ -86,10 +102,13 @@ export default function Navigation({ currentPage, setCurrentPage }: NavigationPr
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 rounded-lg hover:bg-secondary"
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
-
         </div>
       </div>
 
@@ -107,8 +126,8 @@ export default function Navigation({ currentPage, setCurrentPage }: NavigationPr
                 <motion.button
                   key={item.id}
                   onClick={() => {
-                    setCurrentPage(item.id)
-                    setIsMenuOpen(false)
+                    setCurrentPage(item.id);
+                    setIsMenuOpen(false);
                   }}
                   className={`w-full px-4 py-3 rounded-lg text-left font-medium transition-all flex items-center gap-3 ${
                     currentPage === item.id
@@ -145,7 +164,9 @@ export default function Navigation({ currentPage, setCurrentPage }: NavigationPr
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
-                  <h3 className="text-xl font-bold text-foreground">Quét QR website</h3>
+                  <h3 className="text-xl font-bold text-foreground">
+                    Quét QR website
+                  </h3>
                   <p className="text-xs text-muted-foreground mt-1 break-words">
                     {TARGET_URL}
                   </p>
@@ -173,14 +194,13 @@ export default function Navigation({ currentPage, setCurrentPage }: NavigationPr
               <div className="mt-4 flex justify-center">
                 <Button
                   onClick={() => {
-                    window.location.href = TARGET_URL
+                    window.location.href = TARGET_URL;
                   }}
                   className="gap-2"
                 >
                   Mở /qr
                 </Button>
               </div>
-
 
               <div className="mt-4 text-center text-xs text-muted-foreground">
                 Quét để mở trang tương tác.
@@ -190,5 +210,5 @@ export default function Navigation({ currentPage, setCurrentPage }: NavigationPr
         )}
       </AnimatePresence>
     </motion.nav>
-  )
+  );
 }

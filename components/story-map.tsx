@@ -79,6 +79,29 @@ const timeline = [
 
 export default function StoryMap() {
   const [selected, setSelected] = useState<any>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const toggleModal = (item?: any) => {
+    if (item) {
+      // Mở theo mốc cũ
+      if (selected?.year === item.year) {
+        setIsModalOpen((prev) => !prev)
+      } else {
+        setSelected(item)
+        setIsModalOpen(true)
+      }
+      return
+    }
+
+    // toggle đóng/mở lại theo mốc đang chọn
+    setIsModalOpen((prev) => {
+      // nếu đang mở thì đóng (giữ selected)
+      if (prev) return false
+      // nếu đang đóng và có selected thì mở lại
+      return selected ? true : false
+    })
+  }
+
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#050816] text-white">
@@ -110,7 +133,8 @@ export default function StoryMap() {
             <motion.button
               key={index}
               whileHover={{ scale: 1.1 }}
-              onClick={() => setSelected(item)}
+              onClick={() => toggleModal(item)}
+
               className="relative z-10 flex flex-col items-center"
             >
 
@@ -154,7 +178,8 @@ export default function StoryMap() {
         </div>
       </div>
 
-      {selected && (
+      {selected && isModalOpen && (
+
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md">
 
           <motion.div
@@ -164,11 +189,22 @@ export default function StoryMap() {
           >
 
             <button
-              onClick={() => setSelected(null)}
+              type="button"
+              onClick={() => toggleModal()}
               className="absolute right-6 top-6 text-2xl text-gray-400 hover:text-white"
+              aria-label="Close"
             >
               ✕
             </button>
+
+            <button
+              type="button"
+              onClick={() => toggleModal()}
+              className="absolute right-6 bottom-6 rounded-full bg-white/5 px-4 py-2 text-sm font-semibold text-gray-200 border border-white/10 hover:bg-white/10"
+            >
+              {isModalOpen ? "Đóng" : "Mở"}
+            </button>
+
 
             <p className="tracking-[0.3em] text-yellow-400">
               {selected.year}
