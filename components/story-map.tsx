@@ -92,7 +92,7 @@ const slidesData: Slide[] = [
   },
 ]
 
-export function StoryMap() {
+export default function StoryMap() {
   const rootRef = useRef<HTMLDivElement>(null)
 
   const MAP_W = 1000
