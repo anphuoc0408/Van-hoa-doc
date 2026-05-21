@@ -126,8 +126,13 @@ export default function Navigation({
                 <motion.button
                   key={item.id}
                   onClick={() => {
-                    setCurrentPage(item.id);
                     setIsMenuOpen(false);
+
+                    if (item.id === 3) {
+                      window.location.href = "/storymap";
+                    } else {
+                      setCurrentPage(item.id);
+                    }
                   }}
                   className={`w-full px-4 py-3 rounded-lg text-left font-medium transition-all flex items-center gap-3 ${
                     currentPage === item.id

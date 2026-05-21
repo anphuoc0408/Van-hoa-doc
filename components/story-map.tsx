@@ -104,11 +104,11 @@ export default function StoryMap() {
 
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#050816] text-white">
+    <section className="relative min-h-screen overflow-x-auto bg-[#050816] text-white">
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-24">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 pt-24 overflow-x-auto">
 
         <div className="text-center">
 
@@ -116,16 +116,16 @@ export default function StoryMap() {
             HÀNH TRÌNH LỊCH SỬ
           </p>
 
-          <h1 className="bg-gradient-to-b from-yellow-200 to-yellow-500 bg-clip-text text-7xl font-black text-transparent">
+          <h1 className="bg-gradient-to-b from-yellow-200 to-yellow-500 bg-clip-text text-3xl sm:text-5xl lg:text-7xl font-black text-transparent">
             Nguyễn Thị Bình
           </h1>
 
-          <p className="mt-6 text-2xl text-gray-300">
+          <p className="mt-6 text-sm sm:text-lg lg:text-2xl text-gray-300">
             Nữ ngoại giao gia cách mạng — Từ quê hương ra thế giới
           </p>
         </div>
 
-        <div className="relative mt-32 flex items-center justify-between">
+        <div className="relative mt-20 flex min-w-[900px] md:min-w-0 items-center justify-between gap-6 md:gap-10 overflow-x-auto pb-10">
 
           <div className="absolute left-0 top-1/2 h-[2px] w-full bg-gradient-to-r from-yellow-500 via-violet-500 to-purple-500" />
 
