@@ -10,7 +10,7 @@ interface NavigationProps {
   setCurrentPage: (page: number) => void
 }
 
-export function Navigation({ currentPage, setCurrentPage }: NavigationProps) {
+export default function Navigation({ currentPage, setCurrentPage }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScanning, setIsScanning] = useState(false)
 
