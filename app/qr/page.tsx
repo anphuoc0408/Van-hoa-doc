@@ -19,7 +19,7 @@ export default function QRPage() {
       </button>
 
       <h1 className="text-3xl font-bold mb-6">
-        Quét để vào Website nhéee
+        Quét để vào Website
       </h1>
 
       <div className="bg-white p-6 rounded-2xl shadow-lg">
