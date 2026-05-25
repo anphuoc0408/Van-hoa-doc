@@ -10,9 +10,9 @@ const timeline = [
     title: "Cái nôi văn hóa và Tuổi thơ",
     color: "yellow",
     quote:
-      "Tuổi thơ tôi được dệt bằng những câu chuyện về lòng yêu nước.",
+      "Bà sinh ngày 26/5/1927 tại Sa Đéc, Đồng Tháp với tên khai sinh là Nguyễn Thị Châu Sa.",
     story:
-      "Những năm tháng tuổi thơ tại miền Tây Nam Bộ đã hình thành nên tâm hồn mộc mạc và giàu bản sắc vùng miền.",
+      "Người xuất thân trong một gia đình mang đậm truyền thống cách mạng, là cháu ngoại của nhà chí sĩ yêu nước lỗi lạc Phan Châu Trinh.",
     icon: "🌾",
   },
 
@@ -22,9 +22,9 @@ const timeline = [
     title: "Bản lĩnh người chiến sĩ trẻ",
     color: "red",
     quote:
-      "Trong bóng tối lao tù, niềm tin vẫn không bao giờ tắt.",
+      "Hoạt động trong phong trào đấu tranh bí mật dưới bí danh 'Yến Sa', bà bị địch bắt và giam cầm tại Khám Chí Hòa.",
     story:
-      "Bị giam giữ tại Khám Chí Hòa nhưng tinh thần cách mạng vẫn không bị khuất phục.",
+      "Dù trải qua lao tù khắc nghiệt, bà vẫn kiên trung bảo vệ khí tiết của người chiến sĩ cộng sản.",
     icon: "⚔️",
   },
 
@@ -36,7 +36,7 @@ const timeline = [
     quote:
       "Có những tình yêu phải đặt phía sau Tổ quốc.",
     story:
-      "Tập kết ra Bắc và bắt đầu hành trình mới cho lý tưởng cách mạng.",
+      "Bà tập kết ra Bắc, nhận nhiệm vụ công tác tại Hội Liên hiệp Phụ nữ Trung ương; đồng thời chính thức kết hôn với ông Đinh Khang sau 9 năm ròng rã chờ đợi.",
     icon: "🕊️",
   },
 
@@ -46,10 +46,11 @@ const timeline = [
     title: "Bông hồng thép",
     color: "gold",
     quote:
-      "Áo dài Việt Nam đã bước vào bàn đàm phán thế giới.",
+      "Trên cương vị Bộ trưởng Bộ Ngoại giao kiêm Trưởng đoàn đàm phán của Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam, bà trực tiếp tham gia Hội nghị Paris.",
     story:
-      "Đại diện Việt Nam tham gia Hiệp định Paris, trở thành biểu tượng ngoại giao quốc tế.",
+      "Cuộc đấu trí ngoại giao lịch sử khép lại bằng sự kiện bà chính thức đặt bút ký Hiệp định Paris vào lúc 10 giờ sáng ngày 27/01/1973, khẳng định thắng lợi vẻ vang của nền ngoại giao cách mạng Việt Nam.",
     icon: "✍️",
+    
   },
 
   {
@@ -60,7 +61,7 @@ const timeline = [
     quote:
       "Giáo dục là con đường dài nhất để xây dựng hòa bình.",
     story:
-      "Góp phần xây dựng nền giáo dục mới và Ngày Nhà giáo Việt Nam.",
+      "Trong giai đoạn này, bà ghi dấu ấn chiến lược qua việc thống nhất quản lý giáo dục hai miền Nam - Bắc, tham mưu xây dựng nghị quyết cải cách giáo dục (1979) và  nghị chọn ngày 20/11 hằng năm làm Ngày Nhà giáo Việt Nam để tôn vinh đạo lý 'tôn sư trọng đạo'.",
     icon: "📚",
   },
 
@@ -70,9 +71,9 @@ const timeline = [
     title: "Sống mãi một lý tưởng",
     color: "purple",
     quote:
-      "Khi bạn học cách sống vì điều mình tin, câu chuyện sẽ không bao giờ kết thúc.",
+      "Bà hoàn thành xuất sắc nhiệm kỳ Phó Chủ tịch nước Cộng hòa xã hội chủ nghĩa Việt Nam và chính thức nghỉ hưu vào tháng 8/2002. ",
     story:
-      "Tinh thần Nguyễn Thị Bình tiếp tục được lan tỏa trong thời đại số.",
+      "Sau khi rời chính trường, bà tiếp tục duy trì cống hiến sâu rộng cho xã hội thông qua việc sáng lập và lãnh đạo nhiều tổ chức nhân đạo, văn hóa lớn: đảm nhiệm vai trò Chủ tịch Quỹ Hòa bình và Phát triển Việt Nam (2003), Chủ tịch danh dự Hội Nạn nhân chất độc da cam Việt Nam (2004) và Chủ tịch Quỹ Văn hóa Phan Châu Trinh (2006).",
     icon: "✨",
   },
 ]
